@@ -1,0 +1,134 @@
+/*BARRA DE NAVEGACION*/
+#nav{
+   
+    width: 100%;
+    height: 40px;
+    background-color: #333333;
+    color: white;
+    font-family: sans-serif, Arial, Helvetica;
+    font-size: 14px;
+    box-shadow: 0px 0px 4px gray;
+}
+#nav ul {
+    list-style: none;
+    text-decoration: none;
+    margin: 0px auto;
+    width:800px;
+}
+
+#nav > ul >li{
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid gray;
+    transition: all 500ms;
+}
+#nav > ul >li a{
+    display: block;
+    color: #eee;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#nav > ul >li a:first-child{
+    border-left: 1px solid gray;
+}
+/*le damos un hover a los li del menu*/
+
+#nav >ul> li:hover{
+    background-color: #70b231;
+    box-shadow: 0px 0px 10px green inset;
+}
+/*MENU DESPLEGABLE*/
+#nav >ul> li> ul{
+    display: none;
+    position: absolute;/*Para acomodar la posicion en la pantalla*/
+    width: 160px;
+    box-shadow: 0px 2px 2px gray;
+    z-index: 1; /*Para sobreponer sobre culaquier elemento*/
+    
+}
+#nav> ul> li:hover> ul{
+    display: block;
+}
+#nav> ul> li:hover> ul> li{
+    background-color: #f2f1f0;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px; /*este tamaño es un poco mas chico que los primeros elemento de la lista*/
+    transition: all 300ms;
+}
+#nav >ul> li:hover> ul> li a{
+ color: #666666;
+
+}
+#nav> ul> li:hover> ul> li:hover{
+    
+    box-shadow: 0px 2px 6px green inset;
+    background: #70b231;
+    
+}
+#nav >ul> li:hover> ul> li a:hover{
+    color: #666666;
+    font-size: 16px;
+}
+.input{
+    box-shadow: 2px 2px 3px #413f3f inset;
+    background: #70b231;
+    background-color: #d6cdcd;
+    border-radius: 5%;
+    height: 30px;
+    width: 250px;
+    font-size: 18px;
+}
+.boton{
+    
+    margin-left: 15px;
+    margin-bottom: 5px;
+    border-radius: 5%;
+    height: 30px;
+    background-color: #d6cdcd;
+    font-size: 15px;
+    box-shadow: 0px 2px 6px #9a9595 inset;
+    transition: all 300ms;
+}
+#color{
+    font-size: 20px;
+}
+/*}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus{
+    border: 1px solid #70b231;
+    color: black;
+}/*me falla este codigo se sobre pone borde negro¿*/
+
+/*modificamos el boton de enter*/
+/* input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button{
+    display: block;
+    border-radius: 2px;
+    border: 1px solid green;
+    background-color: #70b231;
+    width: 60px;
+    padding: 3px;
+    cursor: pointer;
+    color: white;
+    line-height: center;
+}
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover{
+box-shadow: 0px 0px 6px gray;
+}
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active{
+box-shadow: 0px 0px 8px gray inset;
+text-shadow: 0px 0px 2px #ccc ;
+}*/

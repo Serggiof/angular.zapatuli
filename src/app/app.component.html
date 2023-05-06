@@ -1,1 +1,45 @@
-<h2 >Proyecto Angular de Prueba</h2>
+<div class="body" [ngStyle]="{
+                  'height': '100%',
+                  'width': '100%',    
+                  'margin': '0%',
+                  'padding':'0%'
+                     }">
+
+  <!--Las comillas simples, convierten en un json la directiva-->
+  <!--<h1 >{{title}}</h1>-->
+
+  <!--Inicio de la cabezera-->
+  <header id="header">
+    <div id="logotipo">
+      <img src="../assets/img/logo3.png" alt="logotipo de la wed" [ngStyle]="{'filter': 'brightness(1.1)',
+                 'mix-blend-mode': 'multiply'}" /> <!--con esto eliminamos el fondo de la img-->
+    </div>
+
+    <h1>
+      <a href="zapatillas/zapatillas.component.html">{{encabezado}}</a>
+    </h1>
+  </header>
+  <!--Fin de la cabezera-->
+  <zapatillas></zapatillas>
+
+
+  <!--
+      'border': '5px solid ',
+      'border-color': config.color,
+      'Background-color':config.fondo,
+
+      <button (click)="ocultarvideojuego()" >Ocultar</button>
+
+      <videojuego *ngIf="mostrar_videojuego" ></videojuego>
+
+      <curso01></curso01>
+      esto sale del selector, aca llamamos a al componente para que lo carge el html
+      -->
+
+</div>
+
+<!--<button (click)="ocultarvideojuego(false)" *ngIf="mostrar_videojuego">Ocultar</button>
+      <button (click)="ocultarvideojuego(true)" *ngIf="!mostrar_videojuego">Mostrar</button>
+      https://lenguajejs.com/javascript/introduccion/consola-de-javascript/ 
+      <p>{{descripcion}}</p>
+      -->
