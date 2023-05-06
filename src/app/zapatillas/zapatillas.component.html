@@ -1,71 +1,75 @@
 <!--Esta es la Vista de zapatillas-->
-<div [ngStyle]="{
-    'height': '100%',
-    'width': '100%',    
-    'margin': '0%',
-    'padding':'0%'
-    }">
-    
-<nav id="nav">
-<ul>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Inicio</a>
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Marcas</a>
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Categorias</a>
-</li>
+<div
+  [ngStyle]="{
+    height: '100%',
+    width: '100%',
+    margin: '0%',
+    padding: '0%'
+  }"
+>
+  <nav id="nav">
+    <ul>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Inicio</a>
+      </li>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Marcas</a>
+      </li>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Categorias</a>
+      </li>
 
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Hombre</a>
-<ul>
-<!--Agregamos un menu despligable-->
-<li>
-<a href="https://www.adidas.com.ar/zapatillas-running-hombre"
-  target ="_blank" rel="noopener noreferrer">Adidas</a>
-  <!--usamos el target para abrir link en nueva pestaña
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Hombre</a>
+        <ul>
+          <!--Agregamos un menu despligable-->
+          <li>
+            <a
+              href="https://www.adidas.com.ar/zapatillas-running-hombre"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Adidas</a
+            >
+            <!--usamos el target para abrir link en nueva pestaña
   y el noopener por fallas en tabnabbing-->
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Head</a>
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Nike</a>
-</li>
-</ul>
-</li>
+          </li>
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Head</a>
+          </li>
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Nike</a>
+          </li>
+        </ul>
+      </li>
 
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Mujer</a>
-<ul>
-<!--Agregamos un menu despligable-->
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Fila</a>
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Topper</a>
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Gucci</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Accesorios</a>
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Ofertas</a>
-</li>
-<li>
-<a href="zapatillas/zapatillas.component.html.html">Contacto</a>
-
-</li>
-</ul>
-</nav>
-<!--Fin del Menu-->
-<!--<h2 [ngStyle]="{
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Mujer</a>
+        <ul>
+          <!--Agregamos un menu despligable-->
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Fila</a>
+          </li>
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Topper</a>
+          </li>
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Gucci</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Accesorios</a>
+      </li>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Ofertas</a>
+      </li>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+  <!--Fin del Menu-->
+  <!--<h2 [ngStyle]="{
                 'padding-left': '3%',
                 'font-family':'Arial, Helvetica, sans-serif',
                 'color':'red',
@@ -73,60 +77,81 @@
                 'font-size':'25px'
                  }">{{titulo}}</h2>-->
 
-    <!--Para agregar una marca-->
-    <p>Añadir marca</p>
-    <input class="input" type="text" [(ngModel)]="mi_marca" (keyup.enter)="mostrarPalabra()"/>  
-                 
-    <button class="boton" (click)="getMarca()">mostrar marca</button> 
-    <button class="boton" (click)="addMarca()">Añadir marca</button>
-    <p>{{mi_marca}}</p> 
+  <!--Para agregar una marca-->
+  <p>Añadir marca</p>
+  <input
+    class="input"
+    type="text"
+    [(ngModel)]="mi_marca"
+    (keyup.enter)="mostrarPalabra()"
+  />
+  <button class="boton" (click)="getMarca()">mostrar marca</button>
 
-    <p>Las mejores Marcas de zapatillas </p>
-    <ul id="lis">
-        <li  *ngFor="let marca of marcas; let indice = index">
-            {{ indice + ' - ' +marca}}
-        <button class="boton" (click)="borrarMarca(indice)">Borrar</button>
+  <p>{{ mi_marca }}</p>
+  <br />
+  <input
+    class="input"
+    type="text"
+    [(ngModel)]="mi_marca2"
+    (keyup.enter)="addMarca()"
+  />
+  <button class="boton" (click)="addMarca()">Añadir marca</button>
+
+  <p>Las mejores Marcas de zapatillas</p>
+  <ul id="lis">
+    <li *ngFor="let marca of marcas; let indice = index">
+      {{ indice + " - " + marca }}
+      <button class="boton" (click)="borrarMarca(indice)">Borrar</button>
     </li>
-    </ul>
-<ul>
+  </ul>
+  <ul>
     <!--Crearemos un for para recorre el modelo o clase zapatillas
     usando la directiva *ngfor y va quedar cargado como una lista
     xq lo usaremos en el li haciendo referencia a el array creado en 
     zapatillas.component.ts-->
     <!--deportiva es una varible para cada directiva del array zapatillas
     accediendo con el punto-->
-   <li *ngFor="let deportivas of zapatillas">
-
-  <span [ngStyle]="{
-        'text-decoration': !deportivas.stock ? 'line-through': 'none'
-  }"> {{deportivas.nombre}}- <strong>${{deportivas.precio}}</strong></span>
-            <!--Usamos la directiva ng para porner una oferta sobre
+    <li *ngFor="let deportivas of zapatillas">
+      <span
+        [ngStyle]="{
+          'text-decoration': !deportivas.stock ? 'line-through' : 'none'
+        }"
+      >
+        {{ deportivas.nombre }}- <strong>${{ deportivas.precio }}</strong>
+        {{ deportivas.marca }}</span
+      >
+      <!--Usamos la directiva ng para porner una oferta sobre
             el presio menor de 100-->
-        <span *ngIf="deportivas.precio <=80"
-                [style.background]="deportivas.precio <=80 ? 'red' : 'black' "
-                [style.color]="deportivas.precio <=80 ? '#eee' : 'transparent'"
-                > ¡OFERTA! </span>
-
-        </li>
-     <!--Usamos las doble llaves para acceder a los atributos que deseamos
+      <span
+        *ngIf="deportivas.precio <= 80"
+        [style.background]="deportivas.precio <= 80 ? 'red' : 'black'"
+        [style.color]="deportivas.precio <= 80 ? '#eee' : 'transparent'"
+      >
+        ¡OFERTA!
+      </span>
+    </li>
+    <!--Usamos las doble llaves para acceder a los atributos que deseamos
      mostrar en el browser. usamos la etiqueta strog para mostrar el precio-->
-</ul>
-<p> EL color de la mayoria de nuestras zapatillas es: </p>
-<input  class="input" type="text" [(ngModel)]=" color "/>
-<ul id="color" [ngSwitch]="color">
+  </ul>
+  <p>EL color de la mayoria de nuestras zapatillas es:</p>
+  <input class="input" type="text" [(ngModel)]="color" />
+  <ul id="color" [ngSwitch]="color">
     <li *ngSwitchCase="'yellow'">
-    El color predominante es <span [ngStyle]="{'background': color}">amarillo</span>
+      El color predominante es
+      <span [ngStyle]="{ background: color }">amarillo</span>
     </li>
     <li *ngSwitchCase="'red'">
-        El color predominante es <span [ngStyle]="{'background': color}">rojo</span>
+      El color predominante es
+      <span [ngStyle]="{ background: color }">rojo</span>
     </li>
     <li *ngSwitchCase="'blue'">
-        El color predominante es <span [ngStyle]="{'background': color}">azul</span>
+      El color predominante es
+      <span [ngStyle]="{ background: color }">azul</span>
     </li>
     <li *ngSwitchCase="'orange'">
-        El color predominante es <span [ngStyle]="{'background': color}">naraja</span>
+      El color predominante es
+      <span [ngStyle]="{ background: color }">naraja</span>
     </li>
-    
-</ul>
-<!--'text-decoration': !deportivas.stock ? 'line-through': 'none'-->
+  </ul>
+  <!--'text-decoration': !deportivas.stock ? 'line-through': 'none'-->
 </div>

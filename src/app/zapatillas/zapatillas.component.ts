@@ -18,9 +18,11 @@ export class ZapatillasComponent implements OnInit {
     public marcas: String[];
     public color: string;
     public mi_marca: string
+    public mi_marca2: string
 
     constructor() {
-        this.mi_marca = 'fila'
+        this.mi_marca2= ''
+        this.mi_marca = ''
         this.color = 'yellow'
         this.marcas = new Array();
 
@@ -33,6 +35,7 @@ export class ZapatillasComponent implements OnInit {
 
         ];
         this.titulo = "Marcas de Zapatillas"
+        
         this.listado = ""
                /* METODOS */
     }
@@ -54,8 +57,9 @@ export class ZapatillasComponent implements OnInit {
         alert(this.mi_marca);
     }
     addMarca(){
-        this.marcas.push(this.mi_marca)
+        this.marcas.push(this.mi_marca2)
     }
+
     borrarMarca(indice: number){
         this.marcas.splice(indice, 1);
     }
@@ -63,5 +67,6 @@ export class ZapatillasComponent implements OnInit {
     mostrarPalabra(){
         alert(this.mi_marca)
     }
+    
 }
 // aca exportamos la clase para poder usarla en otros archivos "complementos"
