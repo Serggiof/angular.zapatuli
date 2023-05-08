@@ -3,7 +3,16 @@
 
 <!--creamos un boton para cambiar el titulo desde el browser-->
 <button (click)="CambiarTitulo()">Cambiar titulo</button>
+<br/>
+<br/>
+<button (click)="redirigir()" class="boton">inicio</button>
+<br/>
 <!--para llamar un envento en angular usamos ()-->
+<div *ngIf="nombre" class="cajas">
+<h2>Inicio de Sesion:</h2>
+<p id="nombre">Bienvenido {{nombre}}</p>
+</div>
+<!--tambien podemos hace un metodo para aplicar el router-->
 
 <ul>
   <li>Grimfandango</li>
@@ -11,3 +20,4 @@
   <li>Prin of the Percia</li>
   <li>GTA</li>
 </ul>
+

@@ -1,13 +1,11 @@
+
 <div class="body" [ngStyle]="{
                   'height': '100%',
                   'width': '100%',    
                   'margin': '0%',
                   'padding':'0%'
+                  
                      }">
-
-  <!--Las comillas simples, convierten en un json la directiva-->
-  <!--<h1 >{{title}}</h1>-->
-
   <!--Inicio de la cabezera-->
   <header id="header">
     <div id="logotipo">
@@ -19,10 +17,79 @@
       <a href="zapatillas/zapatillas.component.html">{{encabezado}}</a>
     </h1>
   </header>
-  <!--Fin de la cabezera-->
-  <zapatillas></zapatillas>
+  <!--Fin de la cabezera-->  
 
+ <!--INICIO DE LA MENU-->
+  <nav id="nav">
+    <ul>
+      <li>
+        <a [routerLink]="['/']">Inicio</a>
+      </li>
+      <li>
+        <a [routerLink]="['/zapatillas']">Zapatillas</a>
+      </li>
+      <li>
+        <a [routerLink]="['/videojuegos']">videojuego</a>
+      </li>
 
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Hombre</a>
+        <ul>
+          <!--Agregamos un menu despligable-->
+          <li>
+            <a
+              href="https://www.adidas.com.ar/zapatillas-running-hombre"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Adidas</a
+            >
+      <!--usamos el target para abrir link en nueva pestaña
+        y el noopener por fallas en tabnabbing-->
+          </li>
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Head</a>
+          </li>
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Nike</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Mujer</a>
+        <ul>
+          <!--Agregamos un menu despligable-->
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Fila</a>
+          </li>
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Topper</a>
+          </li>
+          <li>
+            <a href="zapatillas/zapatillas.component.html.html">Gucci</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Accesorios</a>
+      </li>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Ofertas</a>
+      </li>
+      <li>
+        <a href="zapatillas/zapatillas.component.html.html">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+  <!--Fin del Menu-->
+
+  <!--Para cargar una etiqueta que no sea estatica como 
+    <zapatillas></zapatillas>
+     <videojuego></videojuego> usamos router oulet
+  -->
+  <router-outlet></router-outlet>
+  <!-- Esta etiqueta se va a encagar de buscar el component vinculado a esa ruta
+     indicada en le browser y lo cargara-->
   <!--
       'border': '5px solid ',
       'border-color': config.color,
@@ -36,10 +103,12 @@
       esto sale del selector, aca llamamos a al componente para que lo carge el html
       -->
 
-</div>
+
 
 <!--<button (click)="ocultarvideojuego(false)" *ngIf="mostrar_videojuego">Ocultar</button>
       <button (click)="ocultarvideojuego(true)" *ngIf="!mostrar_videojuego">Mostrar</button>
       https://lenguajejs.com/javascript/introduccion/consola-de-javascript/ 
       <p>{{descripcion}}</p>
       -->
+     
+</div>

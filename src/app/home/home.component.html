@@ -1,0 +1,14 @@
+<!--Comoponent para usar como pagina por defecto al inciar la web-->
+
+<!--Usamremos el else con el ng template-->
+<h2>Pagina principal</h2>
+
+<div *ngIf="registro; else noRegistrado ">
+    <h3>Ya estas registrado </h3>
+    <button (click)="finSesion()">Cerrar sesion</button>
+</div>
+
+<ng-template #noRegistrado>
+    <h3>No estas registrado pulse este boton para ingresar</h3>
+    <button (click)="setRegistro()">Registrarse</button>
+</ng-template>    

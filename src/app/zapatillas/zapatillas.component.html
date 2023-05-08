@@ -5,70 +5,11 @@
     width: '100%',
     margin: '0%',
     padding: '0%'
-  }"
->
-  <nav id="nav">
-    <ul>
-      <li>
-        <a href="zapatillas/zapatillas.component.html.html">Inicio</a>
-      </li>
-      <li>
-        <a href="zapatillas/zapatillas.component.html.html">Marcas</a>
-      </li>
-      <li>
-        <a href="zapatillas/zapatillas.component.html.html">Categorias</a>
-      </li>
+   
+  }" >
 
-      <li>
-        <a href="zapatillas/zapatillas.component.html.html">Hombre</a>
-        <ul>
-          <!--Agregamos un menu despligable-->
-          <li>
-            <a
-              href="https://www.adidas.com.ar/zapatillas-running-hombre"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Adidas</a
-            >
-            <!--usamos el target para abrir link en nueva pestaña
-  y el noopener por fallas en tabnabbing-->
-          </li>
-          <li>
-            <a href="zapatillas/zapatillas.component.html.html">Head</a>
-          </li>
-          <li>
-            <a href="zapatillas/zapatillas.component.html.html">Nike</a>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="zapatillas/zapatillas.component.html.html">Mujer</a>
-        <ul>
-          <!--Agregamos un menu despligable-->
-          <li>
-            <a href="zapatillas/zapatillas.component.html.html">Fila</a>
-          </li>
-          <li>
-            <a href="zapatillas/zapatillas.component.html.html">Topper</a>
-          </li>
-          <li>
-            <a href="zapatillas/zapatillas.component.html.html">Gucci</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="zapatillas/zapatillas.component.html.html">Accesorios</a>
-      </li>
-      <li>
-        <a href="zapatillas/zapatillas.component.html.html">Ofertas</a>
-      </li>
-      <li>
-        <a href="zapatillas/zapatillas.component.html.html">Contacto</a>
-      </li>
-    </ul>
-  </nav>
-  <!--Fin del Menu-->
+ 
+  
   <!--<h2 [ngStyle]="{
                 'padding-left': '3%',
                 'font-family':'Arial, Helvetica, sans-serif',
@@ -116,8 +57,15 @@
         [ngStyle]="{
           'text-decoration': !deportivas.stock ? 'line-through' : 'none'
         }"
-      >
-        {{ deportivas.nombre }}- <strong>${{ deportivas.precio }}</strong>
+      >{{ deportivas.nombre }}
+      - <strong [class.altoPrecio]="deportivas.precio >80 "
+                [ngClass]="{'fondoamarillo': deportivas.precio >=100,
+                            'subrallado':deportivas.marca == 'Zalomon'}">
+        ${{ deportivas.precio }}
+      </strong>
+      <!--con [class.nombre] lo que hacemos es agregar un clase con un a
+      directiva. Con el [ngClass] podemos agregar mas clases de css y darle diferentes
+      directivas a cada clase-->
         {{ deportivas.marca }}</span
       >
       <!--Usamos la directiva ng para porner una oferta sobre
@@ -126,6 +74,7 @@
         *ngIf="deportivas.precio <= 80"
         [style.background]="deportivas.precio <= 80 ? 'red' : 'black'"
         [style.color]="deportivas.precio <= 80 ? '#eee' : 'transparent'"
+        [class.altoPrecio]="deportivas.precio >=80 " 
       >
         ¡OFERTA!
       </span>

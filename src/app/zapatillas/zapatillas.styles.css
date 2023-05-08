@@ -1,76 +1,4 @@
-/*BARRA DE NAVEGACION*/
-#nav{
-    width: 100%;
-    height: 40px;
-    background-color: #333333;
-    color: white;
-    font-family: sans-serif, Arial, Helvetica;
-    font-size: 14px;
-    box-shadow: 0px 0px 4px gray;
-}
-#nav ul {
-    list-style: none;
-    text-decoration: none;
-    margin: 0px auto;
-    width:800px;
-}
 
-#nav > ul >li{
-    line-height: 40px;
-    float: left;
-    border-right: 1px solid gray;
-    transition: all 500ms;
-}
-#nav > ul >li a{
-    display: block;
-    color: #eee;
-    text-decoration: none;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-#nav > ul >li a:first-child{
-    border-left: 1px solid gray;
-}
-/*le damos un hover a los li del menu*/
-
-#nav >ul> li:hover{
-    background-color: #70b231;
-    box-shadow: 0px 0px 10px green inset;
-}
-/*MENU DESPLEGABLE*/
-#nav >ul> li> ul{
-    display: none;
-    position: absolute; /*Para acomodar la posicion en la pantalla*/
-    width: 160px;
-    box-shadow: 0px 2px 2px gray;
-    z-index: 1; /*Para sobreponer sobre culaquier elemento*/
-    
-}
-#nav> ul> li:hover> ul{
-    display: block;
-}
-#nav> ul> li:hover> ul> li{
-    background-color: #f2f1f0;
-    border-bottom: 1px solid #d6d6d6;
-    padding: 8px;
-    line-height: 25px;
-    font-size: 13px; /*este tamaño es un poco mas chico que los primeros elemento de la lista*/
-    transition: all 300ms;
-}
-#nav >ul> li:hover> ul> li a{
- color: #666666;
-
-}
-#nav> ul> li:hover> ul> li:hover{
-    
-    box-shadow: 0px 2px 6px green inset;
-    background: #70b231;
-    
-}
-#nav >ul> li:hover> ul> li a:hover{
-    color: #666666;
-    font-size: 16px;
-}
 .input{
     box-shadow: 2px 2px 3px #413f3f inset;
     background: #70b231;
@@ -81,7 +9,6 @@
     font-size: 18px;
     
 }
-
 .boton{
     
     margin-left: 15px;
@@ -95,6 +22,18 @@
 }
 #color{
     font-size: 20px;
+    margin-left: 20px;
+}
+/*Modificamos la etiquetas de precion con directivas de angular */
+.altoPrecio{
+    color: #666666;
+    font-size: 22px;
+}
+.fondoamarillo{
+    background-color: rgb(243, 243, 41);
+}
+.subrallado{
+    text-decoration: underline 2px blue;
 }
 /*}
 input[type="text"]:focus,

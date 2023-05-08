@@ -31,11 +31,12 @@ export class ZapatillasComponent implements OnInit {
             new Zapatilla('Reebok Clasic', 'Reebok', 'Blanco', 80, true),
             new Zapatilla('Reebok Clasic', 'Reebok', 'Blanco', 80, true),
             new Zapatilla('Nike AirMax', 'Nike', 'Rojo y Blaco', 120, true),
+            new Zapatilla('Zalomon outdoor', 'Zalomon', 'negras', 99, true),
             new Zapatilla('Adidas running', 'Adidas', 'negras', 90, false)
 
         ];
         this.titulo = "Marcas de Zapatillas"
-        
+
         this.listado = ""
                /* METODOS */
     }
