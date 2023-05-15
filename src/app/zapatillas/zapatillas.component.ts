@@ -2,46 +2,48 @@ import { Component, OnInit } from "@angular/core";
 //Usamos la interfaz onInit para la verificacion del codigo por consola
 //Hacemos la importacio de la clase zapatillas
 import { Zapatilla } from "../modelos/zapatilla";
-
+import { ZapatillaService } from "../services/zapatilla.service";
+// Para poder usar nuestro servicio debemos inyectarlo como un providers
 
 @Component({
     selector: 'zapatillas', //seria el nombre de la carpeta
     templateUrl: './zapatillas.component.html',
-    styleUrls: ['./zapatillas.styles.css']
+    styleUrls: ['./zapatillas.styles.css'],
+    providers: [ZapatillaService]
 
 })
+
 export class ZapatillasComponent implements OnInit {
     public titulo: string;
     public listado: string;
-    //agregamos un array de zapatillas poder acceder a nuestro modelo
-    public zapatillas: Array<Zapatilla>;
+    //agregamos un array de zapatillas poder acceder a nuestro modelo 5%5
+    //Ahora el array se encuentra en los servicios 14/5/23
+    public zapatillas!: Array<Zapatilla>;
     public marcas: String[];
     public color: string;
     public mi_marca: string
     public mi_marca2: string
 
-    constructor() {
+// Inyectamos como dependencia dentro de una propiedad 
+    constructor(
+        private _zapatillaService: ZapatillaService
+    ){ 
         this.mi_marca2= ''
         this.mi_marca = ''
         this.color = 'yellow'
         this.marcas = new Array();
 
         //creamos una arrar para rellenar la clase creada en zapatilla.ts
-        this.zapatillas = [
-            new Zapatilla('Reebok Clasic', 'Reebok', 'Blanco', 80, true),
-            new Zapatilla('Reebok Clasic', 'Reebok', 'Blanco', 80, true),
-            new Zapatilla('Nike AirMax', 'Nike', 'Rojo y Blaco', 120, true),
-            new Zapatilla('Zalomon outdoor', 'Zalomon', 'negras', 99, true),
-            new Zapatilla('Adidas running', 'Adidas', 'negras', 90, false)
-
-        ];
+        
         this.titulo = "Marcas de Zapatillas"
-
         this.listado = ""
                /* METODOS */
     }
     ngOnInit() {
-        console.log(this.zapatillas)
+      this.zapatillas =  this._zapatillaService.getZapatillas()
+      //usamos el metodo de prueba
+      //alert (this._zapatillaService.getTexto())
+       // console.log(this.zapatillas)
         this.getMarcas();
     }
     getMarcas() {

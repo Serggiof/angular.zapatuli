@@ -58,3 +58,4 @@ export class VideoJuegoComponent implements OnInit, DoCheck, OnDestroy{
     }
 }
 // el decorador no se cierra con 
+
